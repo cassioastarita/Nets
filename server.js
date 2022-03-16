@@ -1,13 +1,13 @@
 const express = require("express");
 
 const logger = require("./middlewares/logger");
-const sessions = require("./middlewares/sessions");
 
-const courtsController = require('./controllers/courts_controller');
+const sessions = require("./middlewares/sessions");
 
 const usersController = require("./controllers/users_controller");
 
 const sessionsController = require("./controllers/sessions_controller");
+const courtsController = require("./controllers/courts_controller");
 
 const app = express();
 const port = 3000;

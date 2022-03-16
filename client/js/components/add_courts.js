@@ -1,5 +1,5 @@
 function renderAddCourt() {
-    document.querySelector("#page").innerHTML = `<section class="create-court">
+  document.querySelector("#page").innerHTML = `<section class="create-court">
           <form action="" onSubmit="addCourt(event)">
             <h2>Add Court</h2>
             <fieldset>
@@ -37,13 +37,20 @@ function renderAddCourt() {
         </section>`;
 }
 
-function createCourt(event) {
-    event.preventDefault();
-    const form = event.target;
-    const data = Object.fromEntries(new FormData(form));
-    axios.post('/api/courts', data)
-      .then(res => res.data)
-      .then(newCourt => state.courts.push(newCourt))
-      .then(() => renderCourtList())
+function addCourt(event) {
+  event.preventDefault();
+  const form = event.target;
+  const data = Object.fromEntries(new FormData(form));
+  axios
+    .post("/api/courts", data)
+    .then((res) => res.data)
+    .then((newCourt) => state.courts.push(newCourt))
+    .then(() => renderCourtList());
 
+  // axios
+  //   .post("/api/courts", res)
+  //   .then((res) => res.data)
+  //   .then((locations) => console.log(locations));
+  // .then(newCourt => state.courts.push(newCourt))
+  // .then(() => renderCourtList())
 }

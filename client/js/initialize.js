@@ -1,10 +1,11 @@
 const state = {
-    courts: []
+  courts: [],
 };
 
 axios
-    .get('/api/courts')
-    .then(res, res.data)
-    .then(courts => {
-        state.courts = courts
-    });
+  .get("/api/courts")
+  .then((res) => res.data)
+  .then((courts) => {
+    state.courts = courts;
+  });
+console.log(state);
