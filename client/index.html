@@ -1,6 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <meta charset="utf-8" />
+    <script type="text/javascript">
+      function GetMap() {
+        var map = new Microsoft.Maps.Map("#myMap", {
+          credentials: "AgUTdckHkoEEnnNX_M9JCirskrm9awj3JA4fPik4s2PGFJn5XEGfnldjkCTosCM_",
+          center: new Microsoft.Maps.Location(-37.806494, 144.950894),
+        });
+
+        var center = map.getCenter();
+
+        //Create custom Pushpin
+        var pin = new Microsoft.Maps.Pushpin(center, {
+          title: "Nets",
+          subTitle: "Melbourne",
+          text: "1",
+        });
+
+        //Add the pushpin to the map
+        map.entities.push(pin);
+      }
+    </script>
+    <script
+      type="text/javascript"
+      src="http://www.bing.com/api/maps/mapcontrol?callback=GetMap"
+      async
+      defer
+    ></script>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -24,6 +51,9 @@
     <h1>Nets</h1>
     <nav id="header-nav" class="header-nav"></nav>
     <section id="page" class="content"></section>
+    <div id="myMap" style="position:relative;width:600px;height:400px;"></div>
+ 
+</body>
   </body>
 </html>
 
