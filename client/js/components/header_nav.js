@@ -4,6 +4,7 @@ function renderHeaderNav() {
     <ul>
       <li class= "material-icons sign-up-icon" onClick="render('signUp')">person_add</li>
       <li class="material-icons login-icon" onClick="render('login')">login</li>
+      <li class="material-icons add-location" onClick="render('addCourt')">add_location</li>
     </ul>`;
 }
 renderHeaderNav();
@@ -13,6 +14,8 @@ function render(component) {
     renderSignUp();
   } else if (component === "login") {
     renderLogin();
+  } else if (component === "addCourt") {
+    renderAddCourt();
   }
 }
 //
