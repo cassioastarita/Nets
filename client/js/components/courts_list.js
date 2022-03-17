@@ -1,13 +1,3 @@
-// let courtName = []
-// let locationAddress = courtName.split(" ").join("%20");
-// axios
-//   .get(
-//     `http://dev.virtualearth.net/REST/v1/Locations?addressLine=${locationAddress}&key=AgUTdckHkoEEnnNX_M9JCirskrm9awj3JA4fPik4s2PGFJn5XEGfnldjkCTosCM_`
-//   )
-//   .then(
-//     (res) => res.data.resourceSets[0].resources[0].geocodePoints[0].coordinates
-//   );
-
 function renderCourtList() {
   document.querySelector("#page").innerHTML = `<section class="courts-list">
     ${renderCourt()}</section>
@@ -23,8 +13,30 @@ function renderMap() {
   });
 
   state.courts.map((court) => {
+    const long = parseFloat(court.coordinates.split(",")[1]);
+    const lat = parseFloat(court.coordinates.split(",")[0]);
+
+    if (court.coordinates.split(",")[0].slice(0, 1) === "-") {
+      const lat = -Math.abs(
+        parseFloat(
+          court.coordinates
+            .split(",")[0]
+            .slice(1, court.coordinates.split(",")[0].length)
+        )
+      );
+    }
+    if (court.coordinates.split(",")[1].slice(0, 1) === "-") {
+      const lat = -Math.abs(
+        parseFloat(
+          court.coordinates
+            .split(",")[1]
+            .slice(1, court.coordinates.split(",")[0].length)
+        )
+      );
+    }
+
     var pushpin = new Microsoft.Maps.Pushpin(
-      new Microsoft.Maps.Location(-37.7646895, 144.9414259),
+      new Microsoft.Maps.Location(lat, long),
 
       {
         title: `${court.court_name}`,
@@ -36,14 +48,14 @@ function renderMap() {
         text: 1,
       }
     );
-    console.log(`hello ${court.coordinates}`);
+
     map.entities.push(pushpin);
   });
 }
 
 function renderCourt() {
   renderMap();
-  state.courts.map((court) => console.log(court.coordinates));
+  state.courts.map((court) => console.log(court.coordinates.split(",")[0]));
   return state.courts
     .map(
       (court) => `
