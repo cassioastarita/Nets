@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Comforter&family=Dosis:wght@200;400&family=Noto+Sans:wght@700&family=Poiret+One&family=Ubuntu:wght@500&display=swap');
+
+body {
+  background-color:rgb(34,81,136);
+  font-family: 'Ubuntu', sans-serif;
+  color: white;
+  text-align: center;
+}
+
+.logo {
+  width: 20em;
+}
+

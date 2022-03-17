@@ -1,0 +1,15 @@
+.header-nav li {
+  padding: 0.5em;
+  font-size: 40px;
+}
+
+.material-icons.md-48 { 
+  cursor: pointer;
+}
+
+/* iPad portrait or bigger */
+@media only screen and (min-width: 700px) {
+  .header-nav ul {
+    justify-content: flex-start;
+  }
+}

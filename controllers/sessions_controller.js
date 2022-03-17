@@ -26,16 +26,14 @@ router.post("/", (req, res) => {
   });
 });
 
-
 // Logout
 router.get('/logout', (req, res) => {
-// remove the req.user property and clear the login session
-req.logout();
-console.log('logged out')
-// destroy session data
-req.session = null;
-// redirect to homepage
-res.redirect('/');
+  // remove the req.user property and clear the login session
+  req.logout();
+  // destroy session data
+  req.session = null;
+  // redirect to homepage
+  res.redirect('/');
 });
 
 module.exports = router;

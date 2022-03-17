@@ -1,16 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <script
-      type="text/javascript"
-      src="http://www.bing.com/api/maps/mapcontrol?callback=GetMap"
-      async
-      defer
-    ></script>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="/css/navigation.css">
+    <link rel="stylesheet" href="/css/form.css">
+    
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.26.0/axios.min.js"
       integrity="sha512-bPh3uwgU5qEMipS/VOmRqynnMXGGSRv+72H/N260MQeXZIK4PG48401Bsby9Nq5P5fz7hy5UGNmC/W1Z51h2GQ=="
@@ -22,19 +21,23 @@
     <script src="js/components/sign_up.js" defer></script>
     <script src="/js/components/login.js" defer></script>
     <script src="/js/components/add_courts.js" defer></script>
-    <script src="/js/components/courts_list.js" defer></script>
+    <script type='text/javascript'
+            src='http://www.bing.com/api/maps/mapcontrol?callback=GetMap&key=[YOUR_BING_MAPS_KEY]' 
+            async defer></script>
+
     <link
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="./css/main.css">
+    
   </head>
+
   <body>
-    <h1>Nets</h1>
-    <nav id="header-nav" class="header-nav"></nav>
-    <section id="page" class="content"></section>
-    <div id="myMap" style="position:relative;width:600px;height:400px;"></div>
- 
-</body>
+      <img src="./css/logo-nets.png" alt="" class="logo">
+      <h1>some text here</h1>
+      <nav id="header-nav" class="header-nav"></nav>
+      <section id="page" class="content"></section>
   </body>
 </html>
 
