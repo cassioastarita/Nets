@@ -3,9 +3,8 @@ const state = {
 };
 
 axios
-  .get("/api/courts")
-  .then((res) => res.data)
-  .then((courts) => {
-    state.courts = courts;
-  });
-console.log(state);
+    .get('/api/courts')
+    .then(res => res.data)
+    .then(courts => {
+        state.courts = courts
+    });
