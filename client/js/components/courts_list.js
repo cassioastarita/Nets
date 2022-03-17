@@ -42,6 +42,7 @@ function renderMap() {
 }
 
 function renderCourt() {
+  renderMap();
   state.courts.map((court) => console.log(court.coordinates));
   return state.courts
     .map(

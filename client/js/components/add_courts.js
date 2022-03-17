@@ -58,7 +58,7 @@ function renderAddCourt() {
           
             <button>Add Court</button>
           </form>
-        </section>`
+        </section>`;
 }
 const getCoordinatesPostRequestToServer = async (data) => {
   try {
@@ -72,44 +72,44 @@ const getCoordinatesPostRequestToServer = async (data) => {
     console.log(coordinateResponse);
     data["coordinates"] = coordinates;
 
-
     console.log(data);
 
-function addCourt(event) {
-    event.preventDefault();
-    const form = event.target;
-    const data = Object.fromEntries(new FormData(form));
-    if (data.net == 'yes') {
-      data.net = true
-    } else {
-      data.net = false
+    function addCourt(event) {
+      event.preventDefault();
+      const form = event.target;
+      const data = Object.fromEntries(new FormData(form));
+      if (data.net == "yes") {
+        data.net = true;
+      } else {
+        data.net = false;
+      }
+
+      if (data.toilet == "yes") {
+        data.toilet = true;
+      } else {
+        data.toilet = false;
+      }
+
+      if (data.water == "yes") {
+        data.water = true;
+      } else {
+        data.water = false;
+      }
+
+      if (data.parking == "yes") {
+        data.parking = true;
+      } else {
+        data.parking = false;
+      }
     }
 
-    if (data.toilet == 'yes') {
-      data.toilet = true
-    } else {
-      data.toilet = false
-    }
+    console.log(data);
+    axios
+      .post("/api/courts", data)
+      .then((res) => res.data)
+      .then((newCourt) => state.courts.push(newCourt));
 
-    if (data.water == 'yes') {
-      data.water = true
-    } else {
-      data.water = false
-    }
-
-    if (data.parking == 'yes') {
-      data.parking = true
-    } else {
-      data.parking = false
-    }
-
-    console.log(data)
-    axios.post('/api/courts', data)
-      .then(res => res.data)
-      .then(newCourt => state.courts.push(newCourt))
-
-      // .then(() => renderCourtList())
-
+    // .then(() => renderCourtList())
 
     axios
       .post("/api/courts", data)
