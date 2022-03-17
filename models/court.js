@@ -6,15 +6,15 @@ const Courts = {
 
     return db.query(sql).then((dbRes) => dbRes.rows);
   },
-  create: (courtName, net, toilet, water, parking, imgUrl) => {
+  create: (courtName, net, toilet, water, parking, imgUrl, coordinates) => {
     const sql = `
-        INSERT INTO court_info(court_name, net, toilet, water, parking, img_url)
-        VALUES ($1, $2, $3, $4, $5, $6)
+        INSERT INTO court_info(court_name, net, toilet, water, parking, img_url, coordinates)
+        VALUES ($1, $2, $3, $4, $5, $6, $7)
         RETURNING *
         `;
 
     return db
-      .query(sql, [courtName, net, toilet, water, parking, imgUrl])
+      .query(sql, [courtName, net, toilet, water, parking, imgUrl, coordinates])
       .then((dbRes) => dbRes.rows[0]);
   },
 };

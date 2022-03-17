@@ -36,21 +36,49 @@ function renderAddCourt() {
           </form>
         </section>`;
 }
+const getCoordinatesPostRequestToServer = async (data) => {
+  try {
+    const addressLine = data.courtName.split(" ").join("%20");
+    const coordinateResponse = await axios.get(
+      `http://dev.virtualearth.net/REST/v1/Locations?addressLine=${addressLine}&maxResults=1&key=AgUTdckHkoEEnnNX_M9JCirskrm9awj3JA4fPik4s2PGFJn5XEGfnldjkCTosCM_`
+    );
+    const coordinates =
+      coordinateResponse.data.resourceSets[0].resources[0].point.coordinates;
+    console.log(coordinates);
+    console.log(coordinateResponse);
+    data["coordinates"] = coordinates;
 
+    console.log(data);
+
+    axios
+      .post("/api/courts", data)
+      .then((res) => res.data)
+      .then((newCourt) => state.courts.push(newCourt))
+      .then(() => renderCourtList());
+  } catch (err) {
+    // Handle Error Here
+    console.error(err);
+  }
+};
 function addCourt(event) {
   event.preventDefault();
   const form = event.target;
   const data = Object.fromEntries(new FormData(form));
-  axios
-    .post("/api/courts", data)
-    .then((res) => res.data)
-    .then((newCourt) => state.courts.push(newCourt))
-    .then(() => renderCourtList());
-
-  // axios
-  //   .post("/api/courts", res)
-  //   .then((res) => res.data)
-  //   .then((locations) => console.log(locations));
-  // .then(newCourt => state.courts.push(newCourt))
-  // .then(() => renderCourtList())
+  getCoordinatesPostRequestToServer(data);
 }
+// function addCourt(event) {
+//   event.preventDefault();
+//   const form = event.target;
+//   const data = Object.fromEntries(new FormData(form));
+//   axios
+//     .post("/api/courts", data)
+//     .then((res) => res.data)
+//     .then((newCourt) => state.courts.push(newCourt))
+//     .then(() => renderCourtList());
+
+// axios
+//   .post("/api/courts", res)
+//   .then((res) => res.data)
+//   .then((locations) => console.log(locations));
+// .then(newCourt => state.courts.push(newCourt))
+// .then(() => renderCourtList())
