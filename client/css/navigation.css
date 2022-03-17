@@ -1,0 +1,16 @@
+.header-nav li {
+  padding: 1em;
+}
+
+.material-icons {
+  cursor: pointer;
+  color: white;
+  /* font-size: 40px; */
+}
+
+
+@media only screen and (min-width: 700px) {
+  .header-nav ul {
+    justify-content: flex-start;
+  }
+}
