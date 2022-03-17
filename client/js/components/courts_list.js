@@ -39,11 +39,11 @@ function renderMap() {
       new Microsoft.Maps.Location(lat, long),
 
       {
-        title: `${court.court_name}`,
-        subTitle: `Nets: ${court.net}`,
-        subTitle: `Toilet: ${court.toilet}`,
-        subTitle: `Water: ${court.water}`,
-        subTitle: `Parking ${court.parking}`,
+        title: `${court.img_url}`,
+        subTitle: `Nets: ${court.net}, Toilet: ${court.toilet}, Water: ${court.toilet}, Parking: ${court.parking}`,
+        // next: `Toilet: ${court.toilet}`,
+        // subTitle: `Water: ${court.water}`,
+        // subTitle: `Parking ${court.parking}`,
 
         text: 1,
       }
@@ -59,20 +59,10 @@ function renderCourt() {
   return state.courts
     .map(
       (court) => `
-      <section class = 'court' data-id= "${court.id}">
-          <header>
-              <h2>${court.court_name}</h2>
-            
-          </header>
-          <p>${court.court_name}</p>
-          <p>${court.net}</p>
-          <p>${court.toilet}</p>
-          <p>${court.water}</p>
-          <p>${court.parking}</p>
-          <p>${court.img_url}</p>
+        <section class = 'court' data-id= "${court.id}">
+           
 
-          
-      </section>`
+        </section>`
     )
     .join(" ");
 }
