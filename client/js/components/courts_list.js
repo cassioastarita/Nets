@@ -55,7 +55,6 @@ function renderMap() {
 
 function renderCourt() {
   renderMap();
-  state.courts.map((court) => console.log(court.coordinates.split(",")[0]));
   return state.courts
     .map(
       (court) => `
