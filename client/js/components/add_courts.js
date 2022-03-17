@@ -52,7 +52,7 @@ function renderAddCourt() {
             </div>
 
             <fieldset>
-            <label for="">Image: </label><br />
+            <label for="">Type of Court: </label><br />
             <input type="text" name="imgUrl" />
           </fieldset>
           
