@@ -17,6 +17,8 @@ function render(component) {
     renderLogin();
   } else if (component === "addCourt") {
     renderAddCourt();
+  } else if (component === "courtsList") {
+    renderCourtList();
   }
 }
 //
