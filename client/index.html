@@ -2,26 +2,6 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <script type="text/javascript">
-      function GetMap() {
-        var map = new Microsoft.Maps.Map("#myMap", {
-          credentials: "AgUTdckHkoEEnnNX_M9JCirskrm9awj3JA4fPik4s2PGFJn5XEGfnldjkCTosCM_",
-          center: new Microsoft.Maps.Location(-37.806494,144.950894),
-        });
-
-        var center = map.getCenter();
-
-        //Create custom Pushpin
-        var pin = new Microsoft.Maps.Pushpin(center, {
-          title: "Nets",
-          subTitle: "Melbourne",
-          text: "1",
-        });
-
-        //Add the pushpin to the map
-        map.entities.push(pin);
-      }
-    </script>
     <script
       type="text/javascript"
       src="http://www.bing.com/api/maps/mapcontrol?callback=GetMap"

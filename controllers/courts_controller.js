@@ -8,11 +8,18 @@ router.get("/", (req, res) => {
 });
 
 router.post("/", (req, res) => {
-  const { courtName, net, toilet, water, parking, imgUrl } = req.body;
-
-  Courts.create(courtName, net, toilet, water, parking, imgUrl).then((court) =>
-    res.json(court)
-  );
+  const { courtName, net, toilet, water, parking, imgUrl, coordinates } =
+    req.body;
+  console.log(coordinates);
+  Courts.create(
+    courtName,
+    net,
+    toilet,
+    water,
+    parking,
+    imgUrl,
+    coordinates
+  ).then((court) => res.json(court));
 });
 
 module.exports = router;

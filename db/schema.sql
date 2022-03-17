@@ -6,4 +6,4 @@ CREATE TABLE users(id SERIAL PRIMARY KEY, name TEXT, email TEXT, password_digest
 
 CREATE TABLE court_info(id SERIAL PRIMARY KEY, court_name TEXT, net BOOLEAN, toilet BOOLEAN, water BOOLEAN, parking BOOLEAN, img_url TEXT);
 
-ALTER TABLE court_info ADD lat_long TEXT;
+ALTER TABLE court_info RENAME COLUMN lat_long TO coordinates;
