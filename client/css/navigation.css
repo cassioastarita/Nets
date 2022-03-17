@@ -1,14 +1,20 @@
+.header-nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+}
+
 .header-nav li {
   padding: 1em;
 }
 
 .material-icons {
   cursor: pointer;
-  color: white;
-  /* font-size: 40px; */
+  font-size: 10rem;
 }
 
-
+/* iPad portrait or bigger */
 @media only screen and (min-width: 700px) {
   .header-nav ul {
     justify-content: flex-start;
