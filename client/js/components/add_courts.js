@@ -70,7 +70,7 @@ const getCoordinatesPostRequestToServer = async (data) => {
       coordinateResponse.data.resourceSets[0].resources[0].point.coordinates;
     console.log(coordinates);
     console.log(coordinateResponse);
-    data["coordinates"] = coordinates;
+    data["coordinates"] = coordinates.join(",");
 
     console.log(data);
 
@@ -127,19 +127,3 @@ function addCourt(event) {
   const data = Object.fromEntries(new FormData(form));
   getCoordinatesPostRequestToServer(data);
 }
-// function addCourt(event) {
-//   event.preventDefault();
-//   const form = event.target;
-//   const data = Object.fromEntries(new FormData(form));
-//   axios
-//     .post("/api/courts", data)
-//     .then((res) => res.data)
-//     .then((newCourt) => state.courts.push(newCourt))
-//     .then(() => renderCourtList());
-
-// axios
-//   .post("/api/courts", res)
-//   .then((res) => res.data)
-//   .then((locations) => console.log(locations));
-// .then(newCourt => state.courts.push(newCourt))
-// .then(() => renderCourtList())
