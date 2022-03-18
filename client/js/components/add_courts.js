@@ -104,12 +104,6 @@ const getCoordinatesPostRequestToServer = async (data) => {
     }
 
     console.log(data);
-    axios
-      .post("/api/courts", data)
-      .then((res) => res.data)
-      .then((newCourt) => state.courts.push(newCourt));
-
-    // .then(() => renderCourtList())
 
     axios
       .post("/api/courts", data)
