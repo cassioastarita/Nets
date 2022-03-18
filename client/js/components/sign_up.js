@@ -26,8 +26,5 @@ function signUp(event) {
   axios
     .post("/api/users", data)
     .then((res) => res.data)
-    .then(
-      (userName) => console.log(userName)
-      // .then(() => renderSignUp());
-    );
+    .then(() => renderLogin());
 }

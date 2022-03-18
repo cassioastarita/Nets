@@ -25,6 +25,5 @@ function login(event) {
   axios
     .post("/api/sessions", data)
     .then((res) => res.data)
-    .then((userName) => console.log(userName));
-  // .then(() => renderMap());
+    .then(() => renderMap());
 }
