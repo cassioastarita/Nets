@@ -4,13 +4,12 @@ function renderCourtList() {
     `;
 }
 
-
 function renderMap() {
-  document.querySelector('#page').innerHTML = `
+  document.querySelector("#page").innerHTML = `
     <section id="court-map" class="court-map"> 
 
     </section>
-  `
+  `;
   var map = new Microsoft.Maps.Map("#court-map", {
     credentials:
       "AgUTdckHkoEEnnNX_M9JCirskrm9awj3JA4fPik4s2PGFJn5XEGfnldjkCTosCM_",
@@ -45,7 +44,7 @@ function renderMap() {
 
       {
         title: `${court.img_url}`,
-        subTitle: `Nets: ${court.net}, Toilet: ${court.toilet}, Water: ${court.toilet}, Parking: ${court.parking}`,
+        subTitle: `Nets: ${court.net},\n Toilet: ${court.toilet},\n Water: ${court.toilet},\n Parking: ${court.parking}`,
         // next: `Toilet: ${court.toilet}`,
         // subTitle: `Water: ${court.water}`,
         // subTitle: `Parking ${court.parking}`,

@@ -109,7 +109,7 @@ const getCoordinatesPostRequestToServer = async (data) => {
       .post("/api/courts", data)
       .then((res) => res.data)
       .then((newCourt) => state.courts.push(newCourt))
-      .then(() => renderCourtList());
+      .then(() => renderMap());
   } catch (err) {
     // Handle Error Here
     console.error(err);
