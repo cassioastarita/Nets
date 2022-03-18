@@ -3,10 +3,15 @@ function renderCourtList() {
     ${renderCourt()}</section>
     `;
 }
-renderCourtList();
+
 
 function renderMap() {
-  var map = new Microsoft.Maps.Map("#myMap", {
+  document.querySelector('#page').innerHTML = `
+    <section id="court-map" class="court-map"> 
+
+    </section>
+  `
+  var map = new Microsoft.Maps.Map("#court-map", {
     credentials:
       "AgUTdckHkoEEnnNX_M9JCirskrm9awj3JA4fPik4s2PGFJn5XEGfnldjkCTosCM_",
     center: new Microsoft.Maps.Location(-37.806494, 144.950894),
@@ -54,7 +59,6 @@ function renderMap() {
 }
 
 function renderCourt() {
-  renderMap();
   return state.courts
     .map(
       (court) => `

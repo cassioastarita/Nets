@@ -19,7 +19,7 @@ function render(component) {
   } else if (component === "addCourt") {
     renderAddCourt();
   } else if (component === "courtsList") {
-    renderCourtList();
+    renderMap();
   }
 }
 //
