@@ -26,4 +26,5 @@ function login(event) {
     .post("/api/sessions", data)
     .then((res) => res.data)
     .then((userName) => console.log(userName));
+  // .then(() => renderMap());
 }
