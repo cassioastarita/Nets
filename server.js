@@ -10,7 +10,7 @@ const sessionsController = require("./controllers/sessions_controller");
 const courtsController = require("./controllers/courts_controller");
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 app.listen(port, () => console.log(`listening on port ${port}`));
 
 app.use(logger);
