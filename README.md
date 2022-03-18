@@ -3,20 +3,21 @@ Link to go to Nets: https://netzforall.herokuapp.com/
 Nets is an application where the user will be able to find the closest court to your home and all the infrastructure it offers such as toilet, water and parking.
 
 # My plan / approach
--User able to Sign up, Login and Logout.
--Connect to Bing Maps API
--After Login, user can add the location, pin the court in the map and add details about infrastructure and type of court.
+- User able to Sign up, Login and Logout.
+- Connect to Bing Maps API
+- After Login, user can add the location, pin the court in the map and add details about infrastructure and type of court.
 Pages: Sign up, Login, Logout, Add Courts and View Courts.
 
 ## Cool tech that I used
 - Use of Microsoft Maps API to allow the user to drop map pins
 - Using radio buttons to allow a user to select yes or no to ammenities
 ## Lessons you learned
-- 
+- Learnt a lot about version control using GitHub and managing conflicts with file merging
+- Handling and passing data from the front end through to the back end
 
 ## Features to add in the future
--Allow users to log in and save a list of their nets
--Allow users to share their nets with other users
+- Allow users to log in and save a list of their nets
+- Allow users to share their nets with other users
 
 ## Tech Stack
 - Javascript
