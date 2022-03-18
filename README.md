@@ -9,22 +9,22 @@ Nets is an application where the user will be able to find the closest court to 
 Pages: Sign up, Login, Logout, Add Courts and View Courts.
 
 ## Cool tech that I used
--Bing Maps API
--Pin the court in the map
--Checkbox (true/false) for infrastructure
+- Use of Microsoft Maps API to allow the user to drop map pins
+- Using radio buttons to allow a user to select yes or no to ammenities
 ## Lessons you learned
-Work with Bing Maps API and Github as a team.
+- 
 
 ## Features to add in the future
 -Allow users to log in and save a list of their nets
 -Allow users to share their nets with other users
 
 ## Tech Stack
--CSS
--Java Script
--HTML
--postgreSQL
--Heroku
+- Javascript
+- HTML
+- CSS
+- Heroku for deployment of app
+- Express web framework
+- postgresql for database
             
 <img width="451" alt="nets_Screenshot2" src="https://user-images.githubusercontent.com/97344617/158934267-2240b45d-26a6-4f49-b936-c3487136d94e.png">
 
