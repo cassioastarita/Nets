@@ -64,7 +64,7 @@ const getCoordinatesPostRequestToServer = async (data) => {
   try {
     const addressLine = data.courtName.split(" ").join("%20");
     const coordinateResponse = await axios.get(
-      `http://dev.virtualearth.net/REST/v1/Locations?addressLine=${addressLine}&maxResults=1&key=AgUTdckHkoEEnnNX_M9JCirskrm9awj3JA4fPik4s2PGFJn5XEGfnldjkCTosCM_`
+      `https://dev.virtualearth.net/REST/v1/Locations?addressLine=${addressLine}&maxResults=1&key=AgUTdckHkoEEnnNX_M9JCirskrm9awj3JA4fPik4s2PGFJn5XEGfnldjkCTosCM_`
     );
     const coordinates =
       coordinateResponse.data.resourceSets[0].resources[0].point.coordinates;
